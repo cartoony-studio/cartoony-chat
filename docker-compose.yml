@@ -1,0 +1,12 @@
+services:
+  chat:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app/src
+      - ./datos:/app/datos
+    env_file: .env
+    restart: unless-stopped
